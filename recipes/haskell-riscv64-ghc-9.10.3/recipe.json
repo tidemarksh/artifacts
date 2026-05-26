@@ -1,0 +1,17 @@
+{
+  "artifactId": "haskell-riscv64-ghc-9.10.3",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 GHC package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "ghc"
+    ]
+  }
+}

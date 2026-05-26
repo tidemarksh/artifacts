@@ -1,0 +1,17 @@
+{
+  "artifactId": "r-riscv64-4.5.3-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 R runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "r-base-core"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "artifactId": "lua-riscv64-5.4.8-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 Lua 5.4 runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "lua5.4",
+      "liblua5.4-0"
+    ]
+  }
+}

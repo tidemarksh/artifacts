@@ -1,0 +1,20 @@
+{
+  "artifactId": "perl-riscv64-5.40.1-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 Perl runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "perl",
+      "perl-base",
+      "perl-modules-5.40",
+      "libperl5.40"
+    ]
+  }
+}

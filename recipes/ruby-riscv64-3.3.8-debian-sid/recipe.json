@@ -1,0 +1,21 @@
+{
+  "artifactId": "ruby-riscv64-3.3.8-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 Ruby 3.3 runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "ruby",
+      "ruby3.3",
+      "libruby3.3",
+      "ruby-rubygems",
+      "rubygems-integration"
+    ]
+  }
+}

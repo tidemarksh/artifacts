@@ -1,0 +1,24 @@
+{
+  "artifactId": "c-toolchain-riscv64-gcc16",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 GCC 16 C toolchain package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "gcc-16",
+      "cpp-16",
+      "gcc-16-riscv64-linux-gnu",
+      "cpp-16-riscv64-linux-gnu",
+      "libgcc-16-dev",
+      "libc6-dev",
+      "binutils",
+      "binutils-riscv64-linux-gnu"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "artifactId": "devtools-riscv64-2026-05",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 developer toolset package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "git",
+      "curl",
+      "tar",
+      "gzip",
+      "xz-utils",
+      "make",
+      "cmake",
+      "ninja-build"
+    ]
+  }
+}

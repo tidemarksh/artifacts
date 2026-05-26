@@ -1,0 +1,17 @@
+{
+  "artifactId": "ocaml-riscv64-5.4.0-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 OCaml package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "ocaml"
+    ]
+  }
+}
