@@ -69,6 +69,13 @@ function listFiles(root) {
   return result.sort();
 }
 
+function listTopLevelFiles(root) {
+  return readdirSync(root)
+    .map((name) => resolve(root, name))
+    .filter((path) => statSync(path).isFile())
+    .sort();
+}
+
 function tarZstd(sourceDir, outPath) {
   run("tar", ["--zstd", "-cf", outPath, "-C", sourceDir, "."]);
 }
@@ -385,8 +392,7 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
   tarZstd(payloadDir, resolve(outDir, "payload.tar.zst"));
   tarZstd(licensesDir, resolve(outDir, "licenses.tar.zst"));
 
-  const releaseFiles = listFiles(outDir)
-    .filter((path) => !path.includes(`${workDir}/`))
+  const releaseFiles = listTopLevelFiles(outDir)
     .filter((path) => basename(path) !== "sha256sums.txt");
   const sums = releaseFiles
     .map((path) => `${sha256File(path)}  ${relative(outDir, path)}`)
