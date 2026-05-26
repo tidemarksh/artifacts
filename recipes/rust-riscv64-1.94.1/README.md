@@ -1,10 +1,9 @@
 # rust-riscv64-1.94.1
 
 The upstream Rust riscv64 package is a Rust distribution installer, not a
-plain final filesystem tree. This artifact should be implemented as a custom
-recipe that downloads the pinned upstream archive, verifies its checksum, runs
-the installer into the payload root, and includes the installed license
-materials.
+plain final filesystem tree. This recipe uses a custom `build.mjs` to download
+the pinned upstream archive, verify its checksum, run the installer into the
+payload root, and include the installed license materials.
 
 Pinned upstream source:
 
