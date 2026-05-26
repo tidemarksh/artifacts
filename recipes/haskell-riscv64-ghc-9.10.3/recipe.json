@@ -11,7 +11,10 @@
       "main"
     ],
     "rootPackages": [
-      "ghc"
+      {
+        "name": "ghc",
+        "version": "9.10.3-4"
+      }
     ]
   }
 }

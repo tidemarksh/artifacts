@@ -38,6 +38,10 @@ Generated release metadata must satisfy the repository release contract:
 node scripts/verify-release-contract.mjs dist/<artifact-id>
 ```
 
-Recipes must pin upstream versions and checksums. They must not depend on a
-developer workstation cache, local paths, or previously materialized payloads
-for official releases.
+Recipes must pin upstream versions and checksums. Debian package-set recipes
+must pin each root package with `name` and `version`; dependency closure is
+resolved from the Debian package index during the build and recorded in the
+release manifests.
+
+Recipes must not depend on a developer workstation cache, local paths, or
+previously materialized payloads for official releases.

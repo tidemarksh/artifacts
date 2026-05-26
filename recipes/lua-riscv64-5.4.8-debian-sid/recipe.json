@@ -11,8 +11,14 @@
       "main"
     ],
     "rootPackages": [
-      "lua5.4",
-      "liblua5.4-0"
+      {
+        "name": "lua5.4",
+        "version": "5.4.8-1+b2"
+      },
+      {
+        "name": "liblua5.4-0",
+        "version": "5.4.8-1+b2"
+      }
     ]
   }
 }

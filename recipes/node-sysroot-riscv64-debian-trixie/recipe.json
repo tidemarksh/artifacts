@@ -11,9 +11,18 @@
       "main"
     ],
     "rootPackages": [
-      "libc6",
-      "libgcc-s1",
-      "libstdc++6"
+      {
+        "name": "libc6",
+        "version": "2.41-12+deb13u3"
+      },
+      {
+        "name": "libgcc-s1",
+        "version": "14.2.0-19"
+      },
+      {
+        "name": "libstdc++6",
+        "version": "14.2.0-19"
+      }
     ]
   }
 }

@@ -32,6 +32,13 @@ function validateRecipe(recipe, path) {
     if (!Array.isArray(recipe.debian.rootPackages) || recipe.debian.rootPackages.length === 0) {
       throw new Error(`${path}: debian.rootPackages must be a non-empty array`);
     }
+    for (const rootPackage of recipe.debian.rootPackages) {
+      if (typeof rootPackage === "string") {
+        throw new Error(`${path}: debian.rootPackages entries must pin name and version`);
+      }
+      assertString(rootPackage?.name, `${path}: debian.rootPackages.name`);
+      assertString(rootPackage?.version, `${path}: debian.rootPackages.version`);
+    }
     if (recipe.debian.mirror.includes("/home/") || recipe.debian.mirror.startsWith("file:")) {
       throw new Error(`${path}: local Debian mirror references are not allowed`);
     }

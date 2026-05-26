@@ -11,14 +11,38 @@
       "main"
     ],
     "rootPackages": [
-      "gcc-16",
-      "cpp-16",
-      "gcc-16-riscv64-linux-gnu",
-      "cpp-16-riscv64-linux-gnu",
-      "libgcc-16-dev",
-      "libc6-dev",
-      "binutils",
-      "binutils-riscv64-linux-gnu"
+      {
+        "name": "gcc-16",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "cpp-16",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "gcc-16-riscv64-linux-gnu",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "cpp-16-riscv64-linux-gnu",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "libgcc-16-dev",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "libc6-dev",
+        "version": "2.42-16"
+      },
+      {
+        "name": "binutils",
+        "version": "2.46-3"
+      },
+      {
+        "name": "binutils-riscv64-linux-gnu",
+        "version": "2.46-3"
+      }
     ]
   }
 }

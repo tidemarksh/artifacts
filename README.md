@@ -28,10 +28,10 @@ node-riscv64-debian-trixie
 glibc-riscv64-debian-trixie-2.42
 python-riscv64-3.12.13
 ruby-riscv64-3.3.8-debian-sid
-php-riscv64-8.4.16-debian-sid
+php-riscv64-8.4.21-debian-sid
 lua-riscv64-5.4.8-debian-sid
 perl-riscv64-5.40.1-debian-sid
-r-riscv64-4.5.3-debian-sid
+r-riscv64-4.6.0-debian-sid
 elixir-erlang-riscv64-1.18.3-27.3
 java-temurin-riscv64-25.0.2
 rust-riscv64-1.94.1

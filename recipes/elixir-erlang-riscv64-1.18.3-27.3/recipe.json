@@ -11,13 +11,34 @@
       "main"
     ],
     "rootPackages": [
-      "elixir",
-      "erlang-base",
-      "erlang-crypto",
-      "erlang-inets",
-      "erlang-parsetools",
-      "erlang-public-key",
-      "erlang-tools"
+      {
+        "name": "elixir",
+        "version": "1.18.3.dfsg-2"
+      },
+      {
+        "name": "erlang-base",
+        "version": "1:27.3.4.11+dfsg-7"
+      },
+      {
+        "name": "erlang-crypto",
+        "version": "1:27.3.4.11+dfsg-7"
+      },
+      {
+        "name": "erlang-inets",
+        "version": "1:27.3.4.11+dfsg-7"
+      },
+      {
+        "name": "erlang-parsetools",
+        "version": "1:27.3.4.11+dfsg-7"
+      },
+      {
+        "name": "erlang-public-key",
+        "version": "1:27.3.4.11+dfsg-7"
+      },
+      {
+        "name": "erlang-tools",
+        "version": "1:27.3.4.11+dfsg-7"
+      }
     ]
   }
 }

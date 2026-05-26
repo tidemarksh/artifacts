@@ -1,0 +1,40 @@
+{
+  "artifactId": "php-riscv64-8.4.21-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 PHP CLI runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      {
+        "name": "php-cli",
+        "version": "2:8.4+99"
+      },
+      {
+        "name": "php-common",
+        "version": "2:99"
+      },
+      {
+        "name": "php8.4-cli",
+        "version": "8.4.21-1"
+      },
+      {
+        "name": "php8.4-common",
+        "version": "8.4.21-1"
+      },
+      {
+        "name": "php8.4-opcache",
+        "version": "8.4.21-1"
+      },
+      {
+        "name": "php8.4-readline",
+        "version": "8.4.21-1"
+      }
+    ]
+  }
+}

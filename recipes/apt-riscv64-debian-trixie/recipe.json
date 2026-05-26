@@ -11,10 +11,22 @@
       "main"
     ],
     "rootPackages": [
-      "base-files",
-      "apt",
-      "ca-certificates",
-      "debian-archive-keyring"
+      {
+        "name": "base-files",
+        "version": "13.8+deb13u5"
+      },
+      {
+        "name": "apt",
+        "version": "3.0.3"
+      },
+      {
+        "name": "ca-certificates",
+        "version": "20250419"
+      },
+      {
+        "name": "debian-archive-keyring",
+        "version": "2025.1"
+      }
     ]
   }
 }

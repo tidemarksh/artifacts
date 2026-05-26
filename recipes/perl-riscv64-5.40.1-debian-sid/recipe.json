@@ -11,10 +11,22 @@
       "main"
     ],
     "rootPackages": [
-      "perl",
-      "perl-base",
-      "perl-modules-5.40",
-      "libperl5.40"
+      {
+        "name": "perl",
+        "version": "5.40.1-7+b1"
+      },
+      {
+        "name": "perl-base",
+        "version": "5.40.1-7+b1"
+      },
+      {
+        "name": "perl-modules-5.40",
+        "version": "5.40.1-7"
+      },
+      {
+        "name": "libperl5.40",
+        "version": "5.40.1-7+b1"
+      }
     ]
   }
 }

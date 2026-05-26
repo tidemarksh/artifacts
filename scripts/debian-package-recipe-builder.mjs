@@ -192,6 +192,34 @@ function resolvePackageClosure(packageNames, packageIndex) {
   return ordered;
 }
 
+function normalizeRootPackage(rootPackage) {
+  if (typeof rootPackage === "string") {
+    return { name: rootPackage };
+  }
+  return rootPackage;
+}
+
+function rootPackageNames(rootPackages) {
+  return rootPackages.map((rootPackage) => normalizeRootPackage(rootPackage).name);
+}
+
+function assertPinnedRootVersions(rootPackages, packageIndex) {
+  for (const rootPackage of rootPackages.map(normalizeRootPackage)) {
+    if (!rootPackage.version) {
+      throw new Error(`root package ${rootPackage.name} must pin version`);
+    }
+    const record = packageIndex.packages.get(rootPackage.name);
+    if (!record) {
+      throw new Error(`package not found in Debian index: ${rootPackage.name}`);
+    }
+    if (record.Version !== rootPackage.version) {
+      throw new Error(
+        `root package ${rootPackage.name} version mismatch: expected ${rootPackage.version}, got ${record.Version}`,
+      );
+    }
+  }
+}
+
 async function readDebianPackageIndex({ mirror, suite, architecture, components }, workDir) {
   const merged = new Map();
   const indexes = [];
@@ -290,7 +318,8 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
   mkdirSync(licensesDir, { recursive: true });
 
   const { packageIndex, indexes } = await readDebianPackageIndex(debian, workDir);
-  const records = resolvePackageClosure(debian.rootPackages, packageIndex);
+  assertPinnedRootVersions(debian.rootPackages, packageIndex);
+  const records = resolvePackageClosure(rootPackageNames(debian.rootPackages), packageIndex);
   const downloads = await downloadDebs(records, debian.mirror, sourceDir);
   for (const { record, path } of downloads) {
     extractDeb(path, payloadDir, workDir, record.Package);

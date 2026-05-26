@@ -11,7 +11,10 @@
       "main"
     ],
     "rootPackages": [
-      "ocaml"
+      {
+        "name": "ocaml",
+        "version": "5.4.0-3"
+      }
     ]
   }
 }
