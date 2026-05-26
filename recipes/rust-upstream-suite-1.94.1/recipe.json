@@ -13,7 +13,7 @@
   "archive": {
     "source": "rust-src-1.94.1.tar.xz",
     "target": "opt/tidemark/rust-src",
-    "stripComponents": 1
+    "stripComponents": 2
   },
   "payload": {
     "root": "opt/tidemark/rust-src",
