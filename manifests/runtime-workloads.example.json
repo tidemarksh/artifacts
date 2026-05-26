@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "core-smoke": [
+      {
+        "id": "busybox-riscv64-1.36.1",
+        "releaseTag": "busybox-riscv64-1.36.1",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "go-exec-capture-helper-riscv64",
+        "releaseTag": "go-exec-capture-helper-riscv64-2026-05",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
+    "dynamic-startup": [
+      {
+        "id": "node-riscv64-debian-trixie",
+        "releaseTag": "node-riscv64-debian-trixie-2026-05",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "python-riscv64-3.12.13",
+        "releaseTag": "python-riscv64-3.12.13",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "java-temurin-riscv64-25.0.2",
+        "releaseTag": "java-temurin-riscv64-25.0.2",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
+    "toolchains": [
+      {
+        "id": "go-riscv64-1.26.1",
+        "releaseTag": "go-riscv64-1.26.1",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "rust-riscv64-1.94.1",
+        "releaseTag": "rust-riscv64-1.94.1",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "c-toolchain-riscv64-gcc16",
+        "releaseTag": "c-toolchain-riscv64-gcc16-2026-05",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
+    "upstream-suites": [
+      {
+        "id": "libuv-suite-1.51.0",
+        "releaseTag": "libuv-suite-1.51.0",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
+    "apt": [
+      {
+        "id": "apt-riscv64-debian-trixie",
+        "releaseTag": "apt-riscv64-debian-trixie-2026-05",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ]
+  }
+}
+

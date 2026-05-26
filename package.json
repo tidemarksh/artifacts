@@ -1,0 +1,10 @@
+{
+  "name": "@tidemarksh/artifacts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:artifact": "node scripts/build-artifact.mjs",
+    "verify:layout": "node scripts/verify-release-layout.mjs"
+  }
+}
+

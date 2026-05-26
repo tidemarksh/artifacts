@@ -1,0 +1,12 @@
+build/
+cache/
+dist/
+tmp/
+*.tar
+*.tar.gz
+*.tar.xz
+*.tar.zst
+*.sha256
+*.tmp
+.DS_Store
+

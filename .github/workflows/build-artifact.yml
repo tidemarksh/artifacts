@@ -1,0 +1,54 @@
+name: build artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_id:
+        description: Artifact recipe id under recipes/
+        required: true
+        type: string
+      release_tag:
+        description: Release tag to publish
+        required: true
+        type: string
+      publish:
+        description: Publish GitHub Release assets
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build artifact
+        run: |
+          node scripts/build-artifact.mjs \
+            --artifact-id "${{ inputs.artifact_id }}" \
+            --out "dist/${{ inputs.artifact_id }}"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_id }}
+          path: dist/${{ inputs.artifact_id }}/*
+
+      - name: Publish release
+        if: inputs.publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ inputs.release_tag }}" \
+            dist/${{ inputs.artifact_id }}/* \
+            --title "${{ inputs.release_tag }}" \
+            --generate-notes
+
