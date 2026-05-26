@@ -5,6 +5,7 @@ import {
   cpSync,
   copyFileSync,
   existsSync,
+  lstatSync,
   mkdirSync,
   readdirSync,
   readFileSync,
@@ -34,7 +35,7 @@ function listFiles(root) {
   const visit = (dir) => {
     for (const name of readdirSync(dir)) {
       const path = join(dir, name);
-      const stat = statSync(path);
+      const stat = lstatSync(path);
       if (stat.isDirectory()) {
         visit(path);
       } else if (stat.isFile()) {
