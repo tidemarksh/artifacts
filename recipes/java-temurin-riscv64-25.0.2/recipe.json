@@ -1,0 +1,30 @@
+{
+  "artifactId": "java-temurin-riscv64-25.0.2",
+  "type": "archive",
+  "version": "25.0.2+10",
+  "summary": "Eclipse Temurin OpenJDK 25 linux/riscv64 archive.",
+  "sources": [
+    {
+      "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.2%2B10/OpenJDK25U-jdk_riscv64_linux_hotspot_25.0.2_10.tar.gz",
+      "fileName": "OpenJDK25U-jdk_riscv64_linux_hotspot_25.0.2_10.tar.gz",
+      "sha256": "168119e4fba350f4e6b3ca92450a2b90a8502b89a235a04415e9adf9f5d3164e"
+    }
+  ],
+  "archive": {
+    "source": "OpenJDK25U-jdk_riscv64_linux_hotspot_25.0.2_10.tar.gz",
+    "target": "opt/tidemark/java",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "opt/tidemark/java",
+    "executables": [
+      "opt/tidemark/java/bin/java",
+      "opt/tidemark/java/bin/javac"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "opt/tidemark/java/legal"
+    }
+  ]
+}

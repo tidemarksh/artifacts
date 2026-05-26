@@ -2,15 +2,18 @@
 
 Each artifact recipe lives in `recipes/<artifact-id>/`.
 
-Required files:
+Archive recipes use a pinned `recipe.json`:
 
 ```text
 recipes/<artifact-id>/
-  README.md
-  build.mjs
+  recipe.json
 ```
 
-`build.mjs` must export:
+`recipe.json` declares upstream URLs, SHA256 values, extraction rules, payload
+placement, and license files. GitHub Actions downloads the upstream source,
+verifies checksums, creates the payload archive, and publishes release assets.
+
+Custom recipes may provide `build.mjs` instead:
 
 ```js
 export async function build({ artifactId, recipeDir, outDir }) {
@@ -30,5 +33,5 @@ source-manifest.json or sources.tar.zst
 ```
 
 Recipes must pin upstream versions and checksums. They must not depend on a
-developer workstation cache for official releases.
-
+developer workstation cache, local paths, or previously materialized payloads
+for official releases.

@@ -1,6 +1,20 @@
 name: build artifact
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/build-artifact.yml"
+      - "package.json"
+      - "recipes/**"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - ".github/workflows/build-artifact.yml"
+      - "package.json"
+      - "recipes/**"
+      - "scripts/**"
   workflow_dispatch:
     inputs:
       artifact_id:
@@ -21,7 +35,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +43,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+
+      - name: Validate recipes
+        run: node scripts/validate-recipes.mjs
+
+  build:
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install archive tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zstd
 
       - name: Build artifact
         run: |
@@ -51,4 +84,3 @@ jobs:
             dist/${{ inputs.artifact_id }}/* \
             --title "${{ inputs.release_tag }}" \
             --generate-notes
-

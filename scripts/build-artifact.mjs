@@ -2,6 +2,7 @@
 import { existsSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import { buildArchiveRecipe } from "./archive-recipe-builder.mjs";
 import { verifyReleaseLayout } from "./verify-release-layout.mjs";
 
 function readArg(name) {
@@ -19,19 +20,22 @@ if (!/^[a-z0-9][a-z0-9._-]*$/.test(artifactId)) {
 const root = resolve(new URL("..", import.meta.url).pathname);
 const recipeDir = resolve(root, "recipes", artifactId);
 const buildModulePath = resolve(recipeDir, "build.mjs");
+const recipeJsonPath = resolve(recipeDir, "recipe.json");
 const outDir = resolve(outArg || `dist/${artifactId}`);
-
-if (!existsSync(buildModulePath)) {
-  throw new Error(`missing recipe build module: ${buildModulePath}`);
-}
 
 mkdirSync(outDir, { recursive: true });
 
-const recipe = await import(pathToFileURL(buildModulePath).href);
-if (typeof recipe.build !== "function") {
-  throw new Error(`recipe does not export build(): ${buildModulePath}`);
+if (existsSync(buildModulePath)) {
+  const recipe = await import(pathToFileURL(buildModulePath).href);
+  if (typeof recipe.build !== "function") {
+    throw new Error(`recipe does not export build(): ${buildModulePath}`);
+  }
+
+  await recipe.build({ artifactId, recipeDir, outDir });
+} else if (existsSync(recipeJsonPath)) {
+  await buildArchiveRecipe({ artifactId, recipeDir, outDir });
+} else {
+  throw new Error(`missing recipe.json or build.mjs under ${recipeDir}`);
 }
 
-await recipe.build({ artifactId, recipeDir, outDir });
 verifyReleaseLayout(outDir);
-

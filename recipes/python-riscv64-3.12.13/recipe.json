@@ -1,0 +1,32 @@
+{
+  "artifactId": "python-riscv64-3.12.13",
+  "type": "archive",
+  "version": "3.12.13+20260325",
+  "summary": "python-build-standalone CPython linux/riscv64 install-only archive.",
+  "sources": [
+    {
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20260325/cpython-3.12.13%2B20260325-riscv64-unknown-linux-gnu-install_only.tar.gz",
+      "fileName": "cpython-3.12.13+20260325-riscv64-unknown-linux-gnu-install_only.tar.gz",
+      "sha256": "e2b871ecac40b93c80a880f4e9c68c61bcca07dfeccc428aa523c93055551a06"
+    }
+  ],
+  "archive": {
+    "source": "cpython-3.12.13+20260325-riscv64-unknown-linux-gnu-install_only.tar.gz",
+    "target": "opt/tidemark/python",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "opt/tidemark/python",
+    "executables": [
+      "opt/tidemark/python/bin/python3.12"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "opt/tidemark/python/lib/python3.12/LICENSE.txt"
+    },
+    {
+      "path": "opt/tidemark/python/lib/python3.12/site-packages/pip-26.0.1.dist-info/licenses"
+    }
+  ]
+}

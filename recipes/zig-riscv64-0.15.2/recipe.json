@@ -1,0 +1,29 @@
+{
+  "artifactId": "zig-riscv64-0.15.2",
+  "type": "archive",
+  "version": "0.15.2",
+  "summary": "Official Zig riscv64 Linux toolchain archive.",
+  "sources": [
+    {
+      "url": "https://ziglang.org/download/0.15.2/zig-riscv64-linux-0.15.2.tar.xz",
+      "fileName": "zig-riscv64-linux-0.15.2.tar.xz",
+      "sha256": "493512bdca485be3c6a9b0f69dcb4cbe4587f3af8e1be282fdd827108ba39930"
+    }
+  ],
+  "archive": {
+    "source": "zig-riscv64-linux-0.15.2.tar.xz",
+    "target": "opt/tidemark/zig",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "opt/tidemark/zig",
+    "executables": [
+      "opt/tidemark/zig/zig"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "opt/tidemark/zig/LICENSE"
+    }
+  ]
+}

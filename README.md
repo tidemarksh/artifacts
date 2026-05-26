@@ -1,21 +1,18 @@
 # Tidemark Artifacts
 
-This repository owns reproducible recipes, release manifests, and GitHub
-Actions workflows for Tidemark test workload artifacts.
-
-Generated payloads are not stored in git. Git stores only recipes, scripts,
-manifests, and release automation. GitHub Actions builds each artifact and
-publishes release assets.
+This repository provides redistributable artifact releases for Tidemark test
+workloads. Each release includes the payload, provenance, checksums, and license
+materials needed by consuming repositories.
 
 ## Boundary
 
 The source code, recipes, scripts, and workflow files in this repository are
 licensed as stated by this repository license.
 
-Release payloads are separate redistributable artifact bundles. Each payload
-keeps its own upstream licenses, notices, source provenance, package metadata,
-and checksum manifest. A payload is not relicensed as Apache-2.0 by being
-published here.
+Release payloads are separate redistributable artifact bundles. Publishing an
+artifact here does not change its upstream license. Each payload is governed by
+the licenses, notices, source provenance, package metadata, and checksum
+manifest included with that release asset.
 
 ## Release Unit
 
@@ -65,21 +62,3 @@ source-manifest.json or sources.tar.zst
 For Debian-derived artifacts, the manifest must include package names,
 versions, architecture, source packages, `.deb` SHA256 values, and copied
 `/usr/share/doc/*/copyright` files.
-
-## Local Development
-
-Build one artifact locally:
-
-```bash
-node scripts/build-artifact.mjs --artifact-id <id> --out dist/<id>
-```
-
-Verify the output layout:
-
-```bash
-node scripts/verify-release-layout.mjs dist/<id>
-```
-
-Official release assets should be built by GitHub Actions, not uploaded from a
-developer workstation.
-

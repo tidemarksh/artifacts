@@ -1,0 +1,33 @@
+{
+  "artifactId": "go-riscv64-1.26.1",
+  "type": "archive",
+  "version": "1.26.1",
+  "summary": "Official Go linux/riscv64 toolchain archive.",
+  "sources": [
+    {
+      "url": "https://go.dev/dl/go1.26.1.linux-riscv64.tar.gz",
+      "fileName": "go1.26.1.linux-riscv64.tar.gz",
+      "sha256": "56f8a63ae986c75e91001d65e17648564a10f0d2b18d696d13c91e459da1abd4"
+    }
+  ],
+  "archive": {
+    "source": "go1.26.1.linux-riscv64.tar.gz",
+    "target": "usr/local/go",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "usr/local/go",
+    "executables": [
+      "usr/local/go/bin/go",
+      "usr/local/go/bin/gofmt"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "usr/local/go/LICENSE"
+    },
+    {
+      "path": "usr/local/go/PATENTS"
+    }
+  ]
+}
