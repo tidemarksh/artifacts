@@ -1,0 +1,41 @@
+{
+  "artifactId": "libuv-suite-1.51.0",
+  "type": "archive",
+  "version": "1.51.0",
+  "summary": "libuv upstream source and test suite archive.",
+  "sources": [
+    {
+      "url": "https://github.com/libuv/libuv/archive/refs/tags/v1.51.0.tar.gz",
+      "fileName": "libuv-1.51.0.tar.gz",
+      "sha256": "27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd"
+    }
+  ],
+  "archive": {
+    "source": "libuv-1.51.0.tar.gz",
+    "target": "opt/tidemark/libuv",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "opt/tidemark/libuv",
+    "referenceFiles": [
+      "opt/tidemark/libuv/include/uv/version.h",
+      "opt/tidemark/libuv/test/test-list.h",
+      "opt/tidemark/libuv/test/test-timer.c",
+      "opt/tidemark/libuv/test/test-async.c",
+      "opt/tidemark/libuv/test/test-fs.c",
+      "opt/tidemark/libuv/test/test-fs-readdir.c",
+      "opt/tidemark/libuv/test/test-threadpool.c"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "opt/tidemark/libuv/LICENSE"
+    },
+    {
+      "path": "opt/tidemark/libuv/LICENSE-docs"
+    },
+    {
+      "path": "opt/tidemark/libuv/LICENSE-extra"
+    }
+  ]
+}

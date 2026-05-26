@@ -1,0 +1,42 @@
+{
+  "artifactId": "rust-upstream-suite-1.94.1",
+  "type": "archive",
+  "version": "1.94.1",
+  "summary": "Rust upstream source corpus for std/process/fs/thread related tests.",
+  "sources": [
+    {
+      "url": "https://static.rust-lang.org/dist/2026-03-26/rust-src-1.94.1.tar.xz",
+      "fileName": "rust-src-1.94.1.tar.xz",
+      "sha256": "cb3756156fe6d2d6cedad327c94ad3721b612c4cd20dfb226d7543250788b66c"
+    }
+  ],
+  "archive": {
+    "source": "rust-src-1.94.1.tar.xz",
+    "target": "opt/tidemark/rust-src",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": "opt/tidemark/rust-src",
+    "referenceFiles": [
+      "opt/tidemark/rust-src/manifest.in",
+      "opt/tidemark/rust-src/lib/rustlib/src/rust/library/std"
+    ]
+  },
+  "licenseFiles": [
+    {
+      "path": "opt/tidemark/rust-src/lib/rustlib/src/rust/library/backtrace/LICENSE-APACHE"
+    },
+    {
+      "path": "opt/tidemark/rust-src/lib/rustlib/src/rust/library/backtrace/LICENSE-MIT"
+    },
+    {
+      "path": "opt/tidemark/rust-src/lib/rustlib/src/rust/library/compiler-builtins/LICENSE.txt"
+    },
+    {
+      "path": "opt/tidemark/rust-src/lib/rustlib/src/rust/library/stdarch/LICENSE-APACHE"
+    },
+    {
+      "path": "opt/tidemark/rust-src/lib/rustlib/src/rust/library/stdarch/LICENSE-MIT"
+    }
+  ]
+}
