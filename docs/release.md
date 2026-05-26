@@ -5,24 +5,19 @@ Do not upload release payloads from a developer workstation.
 
 ## Tag Names
 
-Use artifact identity as the tag prefix. Add a date or snapshot identifier when
-the upstream source is mutable.
+Use the artifact identity as the release tag. Do not append a date, build
+number, or other release suffix to the tag.
 
-Stable upstream archive:
+Examples:
 
 ```text
 go-riscv64-1.26.1
 zig-riscv64-0.15.2
 java-temurin-riscv64-25.0.2
 libuv-suite-1.51.0
-```
-
-Debian package-set release:
-
-```text
-node-sysroot-riscv64-debian-trixie-2026-05-26-1
-apt-riscv64-debian-trixie-2026-05-26-1
-lua-riscv64-5.4.8-debian-sid-2026-05-26-1
+node-sysroot-riscv64-debian-trixie
+apt-riscv64-debian-trixie
+lua-riscv64-5.4.8-debian-sid
 ```
 
 ## Dispatch
@@ -33,7 +28,7 @@ Run the workflow with:
 gh api -X POST repos/tidemarksh/artifacts/actions/workflows/build-artifact.yml/dispatches \
   -f ref=main \
   -f 'inputs[artifact_id]=node-sysroot-riscv64-debian-trixie' \
-  -f 'inputs[release_tag]=node-sysroot-riscv64-debian-trixie-2026-05-26-1' \
+  -f 'inputs[release_tag]=node-sysroot-riscv64-debian-trixie' \
   -F 'inputs[publish]=true'
 ```
 
