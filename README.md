@@ -62,3 +62,7 @@ source-manifest.json or sources.tar.zst
 For Debian-derived artifacts, the manifest must include package names,
 versions, architecture, source packages, `.deb` SHA256 values, and copied
 `/usr/share/doc/*/copyright` files.
+
+`manifest.json`, `source-manifest.json`, and `build-info.json` use
+`schemaVersion: 1`. `manifest.json` identifies the artifact with
+`artifactId`, `artifactType`, `version`, and `payloadRoot`.

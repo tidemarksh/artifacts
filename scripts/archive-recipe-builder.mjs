@@ -13,6 +13,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
+import { BUILDER_VERSION, RELEASE_SCHEMA_VERSION } from "./release-contract.mjs";
 
 function readJson(path) {
   return JSON.parse(readFileSync(path, "utf8"));
@@ -144,29 +145,36 @@ export async function buildArchiveRecipe({ artifactId, recipeDir, outDir }) {
     licensesDir,
     licenseFiles: recipe.licenseFiles,
   });
+  const generatedAt = new Date().toISOString();
   writeJson(resolve(licensesDir, "LICENSE-MANIFEST.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     files: copiedLicenses,
   });
 
   writeJson(resolve(outDir, "manifest.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    type: recipe.type,
+    artifactType: recipe.type,
     version: recipe.version,
     summary: recipe.summary,
+    payloadRoot: recipe.payload?.root ?? recipe.archive.target ?? ".",
     payload: recipe.payload,
     archive: recipe.archive,
     sourceCount: sourceRecords.length,
   });
   writeJson(resolve(outDir, "source-manifest.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     sources: sourceRecords,
   });
   writeJson(resolve(outDir, "build-info.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    builderVersion: BUILDER_VERSION,
+    generatedAt,
     runner: {
       node: process.version,
       githubRunId: process.env.GITHUB_RUN_ID ?? null,

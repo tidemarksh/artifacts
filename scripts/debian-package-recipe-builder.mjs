@@ -12,6 +12,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
+import { BUILDER_VERSION, RELEASE_SCHEMA_VERSION } from "./release-contract.mjs";
 
 function readJson(path) {
   return JSON.parse(readFileSync(path, "utf8"));
@@ -295,9 +296,11 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
     extractDeb(path, payloadDir, workDir, record.Package);
   }
   const licenseFiles = collectDebianCopyrights(payloadDir, licensesDir);
+  const generatedAt = new Date().toISOString();
   writeJson(resolve(licensesDir, "LICENSE-MANIFEST.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     source: `${debian.mirror} ${debian.suite} ${debian.components.join(",")} ${debian.architecture}`,
     files: licenseFiles,
   });
@@ -313,17 +316,20 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
   }));
 
   writeJson(resolve(outDir, "manifest.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    type: recipe.type,
+    artifactType: recipe.type,
     version: recipe.version,
     summary: recipe.summary,
+    payloadRoot: "/",
     debian,
     packageCount: packages.length,
     packages,
   });
   writeJson(resolve(outDir, "source-manifest.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    generatedAt,
     packageIndexes: indexes,
     debs: downloads.map(({ record, url, fileName, sha256, size }) => ({
       package: record.Package,
@@ -335,8 +341,10 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
     })),
   });
   writeJson(resolve(outDir, "build-info.json"), {
+    schemaVersion: RELEASE_SCHEMA_VERSION,
     artifactId,
-    generatedAt: new Date().toISOString(),
+    builderVersion: BUILDER_VERSION,
+    generatedAt,
     runner: {
       node: process.version,
       githubRunId: process.env.GITHUB_RUN_ID ?? null,

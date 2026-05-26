@@ -32,6 +32,12 @@ build-info.json
 source-manifest.json or sources.tar.zst
 ```
 
+Generated release metadata must satisfy the repository release contract:
+
+```bash
+node scripts/verify-release-contract.mjs dist/<artifact-id>
+```
+
 Recipes must pin upstream versions and checksums. They must not depend on a
 developer workstation cache, local paths, or previously materialized payloads
 for official releases.

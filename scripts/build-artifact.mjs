@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { buildArchiveRecipe } from "./archive-recipe-builder.mjs";
 import { buildDebianPackageRecipe } from "./debian-package-recipe-builder.mjs";
+import { verifyReleaseContract } from "./verify-release-contract.mjs";
 import { verifyReleaseLayout } from "./verify-release-layout.mjs";
 
 function readArg(name) {
@@ -34,7 +35,7 @@ if (existsSync(buildModulePath)) {
 
   await recipe.build({ artifactId, recipeDir, outDir });
 } else if (existsSync(recipeJsonPath)) {
-  const recipe = JSON.parse(await import("node:fs/promises").then((fs) => fs.readFile(recipeJsonPath, "utf8")));
+  const recipe = JSON.parse(readFileSync(recipeJsonPath, "utf8"));
   if (recipe.type === "archive") {
     await buildArchiveRecipe({ artifactId, recipeDir, outDir });
   } else if (recipe.type === "debian-package-set") {
@@ -47,3 +48,4 @@ if (existsSync(buildModulePath)) {
 }
 
 verifyReleaseLayout(outDir);
+verifyReleaseContract(outDir);
