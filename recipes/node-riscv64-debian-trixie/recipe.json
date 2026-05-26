@@ -1,0 +1,18 @@
+{
+  "artifactId": "node-riscv64-debian-trixie",
+  "type": "debian-package-set",
+  "version": "trixie-riscv64",
+  "summary": "Debian trixie riscv64 Node.js runtime package set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "trixie",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "base-files",
+      "nodejs"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "artifactId": "node-sysroot-riscv64-debian-trixie",
+  "type": "debian-package-set",
+  "version": "trixie-riscv64",
+  "summary": "Minimal Debian trixie riscv64 dynamic runtime libraries used by Node-family workloads.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "trixie",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      "libc6",
+      "libgcc-s1",
+      "libstdc++6"
+    ]
+  }
+}

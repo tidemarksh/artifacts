@@ -3,6 +3,7 @@ import { existsSync, mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { buildArchiveRecipe } from "./archive-recipe-builder.mjs";
+import { buildDebianPackageRecipe } from "./debian-package-recipe-builder.mjs";
 import { verifyReleaseLayout } from "./verify-release-layout.mjs";
 
 function readArg(name) {
@@ -33,7 +34,14 @@ if (existsSync(buildModulePath)) {
 
   await recipe.build({ artifactId, recipeDir, outDir });
 } else if (existsSync(recipeJsonPath)) {
-  await buildArchiveRecipe({ artifactId, recipeDir, outDir });
+  const recipe = JSON.parse(await import("node:fs/promises").then((fs) => fs.readFile(recipeJsonPath, "utf8")));
+  if (recipe.type === "archive") {
+    await buildArchiveRecipe({ artifactId, recipeDir, outDir });
+  } else if (recipe.type === "debian-package-set") {
+    await buildDebianPackageRecipe({ artifactId, recipeDir, outDir });
+  } else {
+    throw new Error(`unsupported recipe type: ${recipe.type}`);
+  }
 } else {
   throw new Error(`missing recipe.json or build.mjs under ${recipeDir}`);
 }

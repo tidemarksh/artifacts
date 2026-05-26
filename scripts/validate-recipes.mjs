@@ -19,8 +19,23 @@ function validateRecipe(recipe, path) {
   assertString(recipe.artifactId, `${path}: artifactId`);
   assertString(recipe.type, `${path}: type`);
   assertString(recipe.version, `${path}: version`);
-  if (recipe.type !== "archive") {
+  if (recipe.type !== "archive" && recipe.type !== "debian-package-set") {
     throw new Error(`${path}: unsupported type ${recipe.type}`);
+  }
+  if (recipe.type === "debian-package-set") {
+    assertString(recipe.debian?.mirror, `${path}: debian.mirror`);
+    assertString(recipe.debian?.suite, `${path}: debian.suite`);
+    assertString(recipe.debian?.architecture, `${path}: debian.architecture`);
+    if (!Array.isArray(recipe.debian.components) || recipe.debian.components.length === 0) {
+      throw new Error(`${path}: debian.components must be a non-empty array`);
+    }
+    if (!Array.isArray(recipe.debian.rootPackages) || recipe.debian.rootPackages.length === 0) {
+      throw new Error(`${path}: debian.rootPackages must be a non-empty array`);
+    }
+    if (recipe.debian.mirror.includes("/home/") || recipe.debian.mirror.startsWith("file:")) {
+      throw new Error(`${path}: local Debian mirror references are not allowed`);
+    }
+    return;
   }
   if (!Array.isArray(recipe.sources) || recipe.sources.length === 0) {
     throw new Error(`${path}: sources must be a non-empty array`);
