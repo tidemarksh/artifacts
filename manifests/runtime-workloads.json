@@ -45,6 +45,51 @@
         "asset": "payload.tar.zst",
         "sha256": "9d325586d16451bedba6df644c3bebdd6389f3b7817a355e2df40ad790a54574",
         "sourceManifestSha256": "c66174db0daf26bdc5209cca235f455d660a6021f54259276adb95e856640970"
+      },
+      {
+        "id": "ruby-riscv64-3.3.8-debian-sid",
+        "releaseTag": "ruby-riscv64-3.3.8-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "e9e1e4287df143f5c2dc7c8c44f618ffa3f19973f090548310e994edd9fcf8cc",
+        "sourceManifestSha256": "111ecf2808e2a7f124a6638b89dce23a77f60eee6dc9de6528452e457c1f6f65"
+      },
+      {
+        "id": "elixir-erlang-riscv64-1.18.3-27.3",
+        "releaseTag": "elixir-erlang-riscv64-1.18.3-27.3",
+        "asset": "payload.tar.zst",
+        "sha256": "e47b26e114320d21c96670f25d387e53694fd1470ed43ab040e2abdaccb207d8",
+        "sourceManifestSha256": "5253cd5d79e72d416410122b8aec479dc52b60071fe365e37c9aeaeb4b35a09e"
+      },
+      {
+        "id": "php-riscv64-8.4.21-debian-sid",
+        "releaseTag": "php-riscv64-8.4.21-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "f6d4c7ad8d02394a10ee615230c8d7a2b701da94b890296622c2341bf1aa9189",
+        "sourceManifestSha256": "a73a77a755a25729bab985ee72208a3d45ca51d078e7e1515963fa6547d4b55a"
+      },
+      {
+        "id": "lua-riscv64-5.4.8-debian-sid",
+        "releaseTag": "lua-riscv64-5.4.8-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "14c39b99fd5fe1f40187a087fadc5dbcb28d0d3ed9ca772dd0370f51231f698e",
+        "sourceManifestSha256": "fd3651a4f2dd2f2390d150a7df15c3c1f81bab7a5149952ba8275f198823b606"
+      },
+      {
+        "id": "perl-riscv64-5.40.1-debian-sid",
+        "releaseTag": "perl-riscv64-5.40.1-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "6d27657875b01040edafda9ee8a1fbbe5e59f87ad4dd1f8d660b7917dacdc118",
+        "sourceManifestSha256": "7078e991a3227e0d37f4dc7e17815051466c1a3b680434e6e3b88fd720eef48a"
+      },
+      {
+        "id": "r-riscv64-4.6.0-debian-sid",
+        "releaseTag": "r-riscv64-4.6.0-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "fa67ff02dae1ffb9939f2e0917bd07098a1dfd643eeb4efa84cdf7dc95cd6d26",
+        "env": {
+          "TIDEMARK_TEST_R_HOME_OVERLAY_DIR": "usr/lib/R"
+        },
+        "sourceManifestSha256": "5c426a84057dc5d7f62bba121d36b479b627656b2edd92e6ea8939ee7b5cbf2a"
       }
     ],
     "shell": [
@@ -100,6 +145,20 @@
         "asset": "payload.tar.zst",
         "sha256": "018156e4ed1c5ad412a6461b2d043c3fccdc8d7e6e13339f7fcbec959b9dcb6d",
         "sourceManifestSha256": "6b0e1a8450885a5bdba43b050916160c199f8bac486f4cd55dfc5df00cd8d54f"
+      },
+      {
+        "id": "haskell-riscv64-ghc-9.10.3",
+        "releaseTag": "haskell-riscv64-ghc-9.10.3",
+        "asset": "payload.tar.zst",
+        "sha256": "71156fb7c735482ad2ccec0d86a02ec669ef24d60b79b75a90ad820f22105068",
+        "sourceManifestSha256": "9e22eba58bea6230ad565df1057bd404949d9bce559094a02b2f3dd9d039bf98"
+      },
+      {
+        "id": "glibc-riscv64-debian-sid",
+        "releaseTag": "glibc-riscv64-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "5b8fac5ad036bdfb24401ae5778ec48721c4037c308a3a1c331a1ec486e6ba29",
+        "sourceManifestSha256": "0b20b55523fc99a7fd39eb50cfcfd0d67f0417dfa3b6aefe7f75760e762aaa0c"
       }
     ],
     "upstream-suites": [
@@ -109,6 +168,23 @@
         "asset": "payload.tar.zst",
         "sha256": "ee142cffd3f25ad7f1998e0c2c5380ea5d29b9c1c88ced3dad80b84198ede88d",
         "sourceManifestSha256": "bcf0908bf94bfe4d6d1d292d653ead92632770d1088a282c4fe4ec835b7fe03b"
+      },
+      {
+        "id": "rust-upstream-suite-1.94.1",
+        "releaseTag": "rust-upstream-suite-1.94.1",
+        "asset": "payload.tar.zst",
+        "sha256": "3a440cdd436c95b705e0bb32fe5307eb8dcad685c3d5989e30f03f189e25a6dc",
+        "env": {
+          "TIDEMARK_TEST_RUST_UPSTREAM_SUITE_DIR": "opt/tidemark"
+        },
+        "sourceManifestSha256": "87a010b72aa6d22e7fe05fc0422c4bf1160a6cf1f0a7ef8b0930a0f4f469ab95"
+      },
+      {
+        "id": "devtools-riscv64-2026-05",
+        "releaseTag": "devtools-riscv64-2026-05",
+        "asset": "payload.tar.zst",
+        "sha256": "df7f74857fc6ec0d158a7f3b7c32bad4587f0a912f223c7f66fee5805e9546da",
+        "sourceManifestSha256": "4b1338cd1643682a792d13d5b09f824c7710bc9d5cd5e67340e36dc62df56fa4"
       }
     ],
     "apt": [
