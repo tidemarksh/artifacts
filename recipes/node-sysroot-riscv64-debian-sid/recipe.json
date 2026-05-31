@@ -1,0 +1,28 @@
+{
+  "artifactId": "node-sysroot-riscv64-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Minimal Debian sid riscv64 dynamic runtime libraries used by Node workload tests.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      {
+        "name": "libc6",
+        "version": "2.42-16"
+      },
+      {
+        "name": "libgcc-s1",
+        "version": "16.1.0-1"
+      },
+      {
+        "name": "libstdc++6",
+        "version": "16.1.0-1"
+      }
+    ]
+  }
+}

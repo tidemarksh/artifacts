@@ -3,28 +3,28 @@
   "profiles": {
     "core-smoke": [
       {
-        "id": "node-riscv64-debian-trixie",
-        "releaseTag": "node-riscv64-debian-trixie",
+        "id": "node-riscv64-24.14.1",
+        "releaseTag": "node-riscv64-24.14.1",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },
       {
-        "id": "node-sysroot-riscv64-debian-trixie",
-        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "id": "node-sysroot-riscv64-debian-sid",
+        "releaseTag": "node-sysroot-riscv64-debian-sid",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       }
     ],
     "dynamic-startup": [
       {
-        "id": "node-riscv64-debian-trixie",
-        "releaseTag": "node-riscv64-debian-trixie",
+        "id": "node-riscv64-24.14.1",
+        "releaseTag": "node-riscv64-24.14.1",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },
       {
-        "id": "node-sysroot-riscv64-debian-trixie",
-        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "id": "node-sysroot-riscv64-debian-sid",
+        "releaseTag": "node-sysroot-riscv64-debian-sid",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },
