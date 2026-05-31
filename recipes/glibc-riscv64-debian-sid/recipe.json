@@ -1,0 +1,20 @@
+{
+  "artifactId": "glibc-riscv64-debian-sid",
+  "type": "debian-package-set",
+  "version": "sid-riscv64",
+  "summary": "Debian sid riscv64 glibc runtime library set.",
+  "debian": {
+    "mirror": "https://deb.debian.org/debian",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "rootPackages": [
+      {
+        "name": "libc6",
+        "version": "2.42-16"
+      }
+    ]
+  }
+}

@@ -39,6 +39,45 @@
         "releaseTag": "java-temurin-riscv64-25.0.2",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
+      },
+      {
+        "id": "ruby-riscv64-3.3.8-debian-sid",
+        "releaseTag": "ruby-riscv64-3.3.8-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "elixir-erlang-riscv64-1.18.3-27.3",
+        "releaseTag": "elixir-erlang-riscv64-1.18.3-27.3",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "php-riscv64-8.4.21-debian-sid",
+        "releaseTag": "php-riscv64-8.4.21-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "lua-riscv64-5.4.8-debian-sid",
+        "releaseTag": "lua-riscv64-5.4.8-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "perl-riscv64-5.40.1-debian-sid",
+        "releaseTag": "perl-riscv64-5.40.1-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "r-riscv64-4.6.0-debian-sid",
+        "releaseTag": "r-riscv64-4.6.0-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO",
+        "env": {
+          "TIDEMARK_TEST_R_HOME_OVERLAY_DIR": "usr/lib/R"
+        }
       }
     ],
     "shell": [
@@ -87,12 +126,39 @@
         "releaseTag": "cpp-toolchain-riscv64-gcc16",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
+      },
+      {
+        "id": "haskell-riscv64-ghc-9.10.3",
+        "releaseTag": "haskell-riscv64-ghc-9.10.3",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "glibc-riscv64-debian-sid",
+        "releaseTag": "glibc-riscv64-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
       }
     ],
     "upstream-suites": [
       {
         "id": "libuv-suite-1.51.0",
         "releaseTag": "libuv-suite-1.51.0",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "rust-upstream-suite-1.94.1",
+        "releaseTag": "rust-upstream-suite-1.94.1",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO",
+        "env": {
+          "TIDEMARK_TEST_RUST_UPSTREAM_SUITE_DIR": "opt/tidemark"
+        }
+      },
+      {
+        "id": "devtools-riscv64-2026-05",
+        "releaseTag": "devtools-riscv64-2026-05",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       }
