@@ -41,6 +41,28 @@
         "sha256": "TODO"
       }
     ],
+    "shell": [
+      {
+        "id": "busybox-riscv64-1.37.0",
+        "releaseTag": "busybox-riscv64-1.37.0",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
+    "go-capture": [
+      {
+        "id": "go-riscv64-1.26.1",
+        "releaseTag": "go-riscv64-1.26.1",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "go-exec-capture-helper-riscv64",
+        "releaseTag": "go-exec-capture-helper-riscv64",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      }
+    ],
     "toolchains": [
       {
         "id": "go-riscv64-1.26.1",

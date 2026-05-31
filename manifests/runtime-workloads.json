@@ -47,6 +47,31 @@
         "sourceManifestSha256": "c66174db0daf26bdc5209cca235f455d660a6021f54259276adb95e856640970"
       }
     ],
+    "shell": [
+      {
+        "id": "busybox-riscv64-1.37.0",
+        "releaseTag": "busybox-riscv64-1.37.0",
+        "asset": "payload.tar.zst",
+        "sha256": "c35671d3101e4f7e2cd72804400360ae2a378d0ac3dfd0ff14222b3bd8b4f394",
+        "sourceManifestSha256": "c2a32c3914636aa2c56211baa34ae8d12692693360999fbc6576eec20ff284d1"
+      }
+    ],
+    "go-capture": [
+      {
+        "id": "go-riscv64-1.26.1",
+        "releaseTag": "go-riscv64-1.26.1",
+        "asset": "payload.tar.zst",
+        "sha256": "44171a1f2f011685770bfd21db62bcf040717a4affe711b8e19e68886bb05063",
+        "sourceManifestSha256": "6bbd422572abee8c2a0e97ff52ef7022d87fa42f9f0cc77c08102ceb2e182549"
+      },
+      {
+        "id": "go-exec-capture-helper-riscv64",
+        "releaseTag": "go-exec-capture-helper-riscv64",
+        "asset": "payload.tar.zst",
+        "sha256": "a6b8b1f0d31fe19e0b41525f7532f5dbbb01c44e46790a58015c86ee62445aeb",
+        "sourceManifestSha256": "0293bfbc63f04a80529f6ddc6e95bc5d2c02d9f9b790ba4dc9c57fb51d469cd8"
+      }
+    ],
     "toolchains": [
       {
         "id": "go-riscv64-1.26.1",
