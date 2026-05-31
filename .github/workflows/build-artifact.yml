@@ -78,6 +78,7 @@ jobs:
             --out "dist/${{ inputs.artifact_id }}"
 
       - name: Upload workflow artifact
+        if: ${{ !inputs.publish }}
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifact_id }}
