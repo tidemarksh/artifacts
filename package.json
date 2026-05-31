@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:artifact": "node scripts/build-artifact.mjs",
+    "pin:runtime-workloads": "node scripts/pin-runtime-workload-manifest.mjs",
     "verify:layout": "node scripts/verify-release-layout.mjs",
     "verify:contract": "node scripts/verify-release-contract.mjs",
     "validate:recipes": "node scripts/validate-recipes.mjs"

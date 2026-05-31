@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "profiles": {
+    "core-smoke": [
+      {
+        "id": "node-riscv64-debian-trixie",
+        "releaseTag": "node-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "2ee725708d92868c2e608d8bb02edca3ebf5a4188e6c10c6ce5ddb8279d990a2",
+        "sourceManifestSha256": "548545abecddcd6b369a34cb2cab28ff6f71aa7123468159817ac75e0286b8cd"
+      },
+      {
+        "id": "node-sysroot-riscv64-debian-trixie",
+        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "91fde2da481efcc141863bbafec742cf64b070edaf0b5a479174a00c989def27",
+        "sourceManifestSha256": "bb3fa7112668e6af0d3525e54739a634e1615ef7acb7db5f849d37c780e6eee8"
+      }
+    ],
+    "dynamic-startup": [
+      {
+        "id": "node-riscv64-debian-trixie",
+        "releaseTag": "node-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "2ee725708d92868c2e608d8bb02edca3ebf5a4188e6c10c6ce5ddb8279d990a2",
+        "sourceManifestSha256": "548545abecddcd6b369a34cb2cab28ff6f71aa7123468159817ac75e0286b8cd"
+      },
+      {
+        "id": "node-sysroot-riscv64-debian-trixie",
+        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "91fde2da481efcc141863bbafec742cf64b070edaf0b5a479174a00c989def27",
+        "sourceManifestSha256": "bb3fa7112668e6af0d3525e54739a634e1615ef7acb7db5f849d37c780e6eee8"
+      },
+      {
+        "id": "python-riscv64-3.12.13",
+        "releaseTag": "python-riscv64-3.12.13",
+        "asset": "payload.tar.zst",
+        "sha256": "fd65335220cfecd525fe75aa433bf98b63b54c922977955a77d5693c7f00f3e1",
+        "sourceManifestSha256": "0b6edffd3a204a04bc47aeaadc002f974aafd873f198228badf7e9d232b030c4"
+      },
+      {
+        "id": "java-temurin-riscv64-25.0.2",
+        "releaseTag": "java-temurin-riscv64-25.0.2",
+        "asset": "payload.tar.zst",
+        "sha256": "9d325586d16451bedba6df644c3bebdd6389f3b7817a355e2df40ad790a54574",
+        "sourceManifestSha256": "c66174db0daf26bdc5209cca235f455d660a6021f54259276adb95e856640970"
+      }
+    ],
+    "toolchains": [
+      {
+        "id": "go-riscv64-1.26.1",
+        "releaseTag": "go-riscv64-1.26.1",
+        "asset": "payload.tar.zst",
+        "sha256": "44171a1f2f011685770bfd21db62bcf040717a4affe711b8e19e68886bb05063",
+        "sourceManifestSha256": "6bbd422572abee8c2a0e97ff52ef7022d87fa42f9f0cc77c08102ceb2e182549"
+      },
+      {
+        "id": "rust-riscv64-1.94.1",
+        "releaseTag": "rust-riscv64-1.94.1",
+        "asset": "payload.tar.zst",
+        "sha256": "c1f9b3295fb2bc4ad9bad1b36f601ec558d568638947cdf7b4400b30859a569f",
+        "sourceManifestSha256": "b81f58b6afcbe6c962ffd72adf49fe97f3c73cba966bd1df2d68f08dcd38195d"
+      },
+      {
+        "id": "c-toolchain-riscv64-gcc16",
+        "releaseTag": "c-toolchain-riscv64-gcc16",
+        "asset": "payload.tar.zst",
+        "sha256": "9287bead1f9035bed9ff18538b5420f50db439945dc550e4dcbc4246b680321b",
+        "sourceManifestSha256": "96eac6f1a89582b38ad57c09cfb6a07b861d6b6ad358167dd9570f50a82715ba"
+      },
+      {
+        "id": "cpp-toolchain-riscv64-gcc16",
+        "releaseTag": "cpp-toolchain-riscv64-gcc16",
+        "asset": "payload.tar.zst",
+        "sha256": "018156e4ed1c5ad412a6461b2d043c3fccdc8d7e6e13339f7fcbec959b9dcb6d",
+        "sourceManifestSha256": "6b0e1a8450885a5bdba43b050916160c199f8bac486f4cd55dfc5df00cd8d54f"
+      }
+    ],
+    "upstream-suites": [
+      {
+        "id": "libuv-suite-1.51.0",
+        "releaseTag": "libuv-suite-1.51.0",
+        "asset": "payload.tar.zst",
+        "sha256": "ee142cffd3f25ad7f1998e0c2c5380ea5d29b9c1c88ced3dad80b84198ede88d",
+        "sourceManifestSha256": "bcf0908bf94bfe4d6d1d292d653ead92632770d1088a282c4fe4ec835b7fe03b"
+      }
+    ],
+    "apt": [
+      {
+        "id": "apt-riscv64-debian-trixie",
+        "releaseTag": "apt-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "e35f5116fe669c1b5caf9978304e768712163361bdab9d324b9adfdecea000d1",
+        "sourceManifestSha256": "f6be1070f13472d82e8ccc85b75bc83837664febe9aa2d1a46c8ec8c066251fe"
+      }
+    ]
+  },
+  "repository": "https://github.com/tidemarksh/artifacts"
+}

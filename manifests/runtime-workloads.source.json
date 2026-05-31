@@ -3,14 +3,14 @@
   "profiles": {
     "core-smoke": [
       {
-        "id": "busybox-riscv64-1.36.1",
-        "releaseTag": "busybox-riscv64-1.36.1",
+        "id": "node-riscv64-debian-trixie",
+        "releaseTag": "node-riscv64-debian-trixie",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },
       {
-        "id": "go-exec-capture-helper-riscv64",
-        "releaseTag": "go-exec-capture-helper-riscv64-2026-05",
+        "id": "node-sysroot-riscv64-debian-trixie",
+        "releaseTag": "node-sysroot-riscv64-debian-trixie",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       }
@@ -18,7 +18,13 @@
     "dynamic-startup": [
       {
         "id": "node-riscv64-debian-trixie",
-        "releaseTag": "node-riscv64-debian-trixie-2026-05",
+        "releaseTag": "node-riscv64-debian-trixie",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "node-sysroot-riscv64-debian-trixie",
+        "releaseTag": "node-sysroot-riscv64-debian-trixie",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },
@@ -50,7 +56,13 @@
       },
       {
         "id": "c-toolchain-riscv64-gcc16",
-        "releaseTag": "c-toolchain-riscv64-gcc16-2026-05",
+        "releaseTag": "c-toolchain-riscv64-gcc16",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
+        "id": "cpp-toolchain-riscv64-gcc16",
+        "releaseTag": "cpp-toolchain-riscv64-gcc16",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       }
@@ -66,11 +78,10 @@
     "apt": [
       {
         "id": "apt-riscv64-debian-trixie",
-        "releaseTag": "apt-riscv64-debian-trixie-2026-05",
+        "releaseTag": "apt-riscv64-debian-trixie",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       }
     ]
   }
 }
-
