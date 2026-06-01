@@ -1,0 +1,26 @@
+{
+  "artifactId": "node-riscv64-24.14.1",
+  "type": "archive",
+  "version": "24.14.1",
+  "summary": "Node.js v24.14.1 linux-riscv64 runtime used by Tidemark runtime Node workload tests.",
+  "sources": [
+    {
+      "url": "https://unofficial-builds.nodejs.org/download/release/v24.14.1/node-v24.14.1-linux-riscv64.tar.xz",
+      "sha256": "b2527028055179c1e53db03803686f759b040409684273b72201fee0e6edd130"
+    }
+  ],
+  "archive": {
+    "source": "node-v24.14.1-linux-riscv64.tar.xz",
+    "target": ".",
+    "stripComponents": 1
+  },
+  "payload": {
+    "root": ".",
+    "executable": "bin/node"
+  },
+  "licenseFiles": [
+    {
+      "path": "LICENSE"
+    }
+  ]
+}

@@ -71,11 +71,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xz-utils zstd
 
-      - name: Install Node cross build tools
-        if: inputs.artifact_id == 'node-riscv64-24.14.1'
-        run: |
-          sudo apt-get install -y python3 make gcc g++ gcc-riscv64-linux-gnu g++-riscv64-linux-gnu
-
       - name: Build artifact
         run: |
           node scripts/build-artifact.mjs \
