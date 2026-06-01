@@ -3,34 +3,34 @@
   "profiles": {
     "core-smoke": [
       {
-        "id": "node-riscv64-debian-trixie",
-        "releaseTag": "node-riscv64-debian-trixie",
+        "id": "node-riscv64-24.14.1",
+        "releaseTag": "node-riscv64-24.14.1",
         "asset": "payload.tar.zst",
-        "sha256": "2ee725708d92868c2e608d8bb02edca3ebf5a4188e6c10c6ce5ddb8279d990a2",
-        "sourceManifestSha256": "548545abecddcd6b369a34cb2cab28ff6f71aa7123468159817ac75e0286b8cd"
+        "sha256": "466e0eaf4ab0f60952553f8859efc78d8464b487111f81a3daa914574779f4ce",
+        "sourceManifestSha256": "c2871992dd2fe24fdbb0616422cafd1da4b2a948c3f600ebfda1fd714b27d488"
       },
       {
-        "id": "node-sysroot-riscv64-debian-trixie",
-        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "id": "node-sysroot-riscv64-debian-sid",
+        "releaseTag": "node-sysroot-riscv64-debian-sid",
         "asset": "payload.tar.zst",
-        "sha256": "91fde2da481efcc141863bbafec742cf64b070edaf0b5a479174a00c989def27",
-        "sourceManifestSha256": "bb3fa7112668e6af0d3525e54739a634e1615ef7acb7db5f849d37c780e6eee8"
+        "sha256": "3486933dd4bb4bf51e4eaefba63926bfd0cdc16a20d7b46c2fa3c0f76c64309a",
+        "sourceManifestSha256": "426df753ae551ba395c7460aee55792297ca8574bfa68908c73d6627a20d6f02"
       }
     ],
     "dynamic-startup": [
       {
-        "id": "node-riscv64-debian-trixie",
-        "releaseTag": "node-riscv64-debian-trixie",
+        "id": "node-riscv64-24.14.1",
+        "releaseTag": "node-riscv64-24.14.1",
         "asset": "payload.tar.zst",
-        "sha256": "2ee725708d92868c2e608d8bb02edca3ebf5a4188e6c10c6ce5ddb8279d990a2",
-        "sourceManifestSha256": "548545abecddcd6b369a34cb2cab28ff6f71aa7123468159817ac75e0286b8cd"
+        "sha256": "466e0eaf4ab0f60952553f8859efc78d8464b487111f81a3daa914574779f4ce",
+        "sourceManifestSha256": "c2871992dd2fe24fdbb0616422cafd1da4b2a948c3f600ebfda1fd714b27d488"
       },
       {
-        "id": "node-sysroot-riscv64-debian-trixie",
-        "releaseTag": "node-sysroot-riscv64-debian-trixie",
+        "id": "node-sysroot-riscv64-debian-sid",
+        "releaseTag": "node-sysroot-riscv64-debian-sid",
         "asset": "payload.tar.zst",
-        "sha256": "91fde2da481efcc141863bbafec742cf64b070edaf0b5a479174a00c989def27",
-        "sourceManifestSha256": "bb3fa7112668e6af0d3525e54739a634e1615ef7acb7db5f849d37c780e6eee8"
+        "sha256": "3486933dd4bb4bf51e4eaefba63926bfd0cdc16a20d7b46c2fa3c0f76c64309a",
+        "sourceManifestSha256": "426df753ae551ba395c7460aee55792297ca8574bfa68908c73d6627a20d6f02"
       },
       {
         "id": "python-riscv64-3.12.13",
