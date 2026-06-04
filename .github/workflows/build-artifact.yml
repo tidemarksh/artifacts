@@ -69,7 +69,7 @@ jobs:
       - name: Install archive tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y xz-utils zstd
+          sudo apt-get install -y binutils-riscv64-linux-gnu xz-utils zstd
 
       - name: Build artifact
         run: |

@@ -55,6 +55,11 @@
         "name": "libstdc++-16-dev",
         "version": "16.1.0-1"
       }
+    ],
+    "stripDebug": [
+      "usr/libexec/gcc/riscv64-linux-gnu/16/cc1",
+      "usr/libexec/gcc/riscv64-linux-gnu/16/cc1plus",
+      "usr/libexec/gcc/riscv64-linux-gnu/16/lto1"
     ]
   }
 }

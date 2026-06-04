@@ -43,6 +43,10 @@
         "name": "binutils-riscv64-linux-gnu",
         "version": "2.46-3"
       }
+    ],
+    "stripDebug": [
+      "usr/libexec/gcc/riscv64-linux-gnu/16/cc1",
+      "usr/libexec/gcc/riscv64-linux-gnu/16/lto1"
     ]
   }
 }

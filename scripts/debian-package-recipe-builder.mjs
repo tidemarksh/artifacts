@@ -51,6 +51,13 @@ function run(command, args) {
   return result.stdout ?? Buffer.alloc(0);
 }
 
+function stripCommandForArchitecture(architecture) {
+  if (architecture === "riscv64") {
+    return "riscv64-linux-gnu-strip";
+  }
+  return "strip";
+}
+
 function listFiles(root) {
   const result = [];
   const visit = (dir) => {
@@ -68,6 +75,26 @@ function listFiles(root) {
     visit(root);
   }
   return result.sort();
+}
+
+function normalizePayloadRelativePath(value) {
+  if (typeof value !== "string" || value.length === 0) {
+    throw new Error("stripDebug entries must be non-empty relative paths");
+  }
+  if (value.startsWith("/") || value.split("/").includes("..")) {
+    throw new Error(`stripDebug path must stay within payload: ${value}`);
+  }
+  return value.split("/").filter(Boolean).join("/");
+}
+
+function resolvePayloadPath(payloadDir, relPath) {
+  const normalized = normalizePayloadRelativePath(relPath);
+  const path = resolve(payloadDir, normalized);
+  const root = `${resolve(payloadDir)}/`;
+  if (!path.startsWith(root)) {
+    throw new Error(`payload path escapes payload root: ${relPath}`);
+  }
+  return { normalized, path };
 }
 
 function listTopLevelFiles(root) {
@@ -273,6 +300,34 @@ function extractDeb(debPath, payloadDir, workDir, packageName) {
   run("tar", ["-xf", dataPath, "-C", payloadDir]);
 }
 
+function stripPayloadDebugFiles(payloadDir, debian) {
+  const stripDebug = debian.stripDebug ?? [];
+  if (stripDebug.length === 0) {
+    return [];
+  }
+  const command = stripCommandForArchitecture(debian.architecture);
+  const records = [];
+  for (const relPath of stripDebug) {
+    const { normalized, path } = resolvePayloadPath(payloadDir, relPath);
+    if (!existsSync(path)) {
+      throw new Error(`stripDebug payload file not found: ${normalized}`);
+    }
+    const beforeSize = statSync(path).size;
+    const beforeSha256 = sha256File(path);
+    run(command, ["--strip-debug", path]);
+    records.push({
+      path: normalized,
+      tool: command,
+      action: "strip-debug",
+      sizeBefore: beforeSize,
+      sizeAfter: statSync(path).size,
+      sha256Before: beforeSha256,
+      sha256After: sha256File(path),
+    });
+  }
+  return records;
+}
+
 async function downloadDebs(records, mirror, sourceDir) {
   const downloads = [];
   mkdirSync(sourceDir, { recursive: true });
@@ -332,6 +387,7 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
   for (const { record, path } of downloads) {
     extractDeb(path, payloadDir, workDir, record.Package);
   }
+  const payloadTransforms = stripPayloadDebugFiles(payloadDir, debian);
   const licenseFiles = collectDebianCopyrights(payloadDir, licensesDir);
   const generatedAt = new Date().toISOString();
   writeJson(resolve(licensesDir, "LICENSE-MANIFEST.json"), {
@@ -360,6 +416,7 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
     summary: recipe.summary,
     payloadRoot: "/",
     debian,
+    payloadTransforms,
     packageCount: packages.length,
     packages,
   });
@@ -376,6 +433,7 @@ export async function buildDebianPackageRecipe({ artifactId, recipeDir, outDir }
       sha256,
       size,
     })),
+    payloadTransforms,
   });
   writeJson(resolve(outDir, "build-info.json"), {
     schemaVersion: RELEASE_SCHEMA_VERSION,

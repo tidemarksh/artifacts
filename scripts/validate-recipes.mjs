@@ -15,6 +15,13 @@ function assertString(value, label) {
   }
 }
 
+function assertPayloadRelativePath(value, label) {
+  assertString(value, label);
+  if (value.startsWith("/") || value.split("/").includes("..")) {
+    throw new Error(`${label} must be a relative payload path`);
+  }
+}
+
 function validateRecipe(recipe, path) {
   assertString(recipe.artifactId, `${path}: artifactId`);
   assertString(recipe.type, `${path}: type`);
@@ -41,6 +48,14 @@ function validateRecipe(recipe, path) {
     }
     if (recipe.debian.mirror.includes("/home/") || recipe.debian.mirror.startsWith("file:")) {
       throw new Error(`${path}: local Debian mirror references are not allowed`);
+    }
+    if (recipe.debian.stripDebug !== undefined) {
+      if (!Array.isArray(recipe.debian.stripDebug)) {
+        throw new Error(`${path}: debian.stripDebug must be an array`);
+      }
+      for (const [index, relPath] of recipe.debian.stripDebug.entries()) {
+        assertPayloadRelativePath(relPath, `${path}: debian.stripDebug[${index}]`);
+      }
     }
     return;
   }
