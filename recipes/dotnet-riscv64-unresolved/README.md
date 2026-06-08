@@ -13,10 +13,14 @@ Current source check, 2026-06-08 JST:
 
 - Official .NET release index:
   `https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json`
-- Checked official `releases.json` metadata for channels 11.0 preview, 10.0,
-  9.0, and 8.0.
+- Checked official `releases.json` and `supported-os.json` metadata for
+  channels 11.0 preview, 10.0, 9.0, and 8.0.
 - Result: no `linux-riscv64` / `riscv64` runtime or SDK file entries were
-  present in those official metadata files.
+  present in those official metadata files:
+  - 11.0: 4 releases, 0 riscv64 file matches, 0 supported-os matches
+  - 10.0: 18 releases, 0 riscv64 file matches, 0 supported-os matches
+  - 9.0: 26 releases, 0 riscv64 file matches, 0 supported-os matches
+  - 8.0: 36 releases, 0 riscv64 file matches, 0 supported-os matches
 
 Keep this recipe unresolved until an official redistributable Linux riscv64
 runtime or SDK source, or a reproducible build recipe with redistribution

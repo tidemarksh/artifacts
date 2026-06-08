@@ -11,13 +11,15 @@ local materialization.
 
 Current source check, 2026-06-08 JST:
 
-- Official Swift Linux install pages checked:
-  - `https://www.swift.org/install/linux/ubuntu/24_04/`
-  - `https://www.swift.org/install/linux/ubuntu/22_04/`
-  - `https://www.swift.org/install/linux/debian/12/`
-  - `https://www.swift.org/install/linux/fedora/41/`
-- Result: the checked Swift.org Linux pages list x86_64 and aarch64 toolchain
-  downloads, but no `riscv64` Linux toolchain entry.
+- Official Swift Linux install page checked:
+  `https://www.swift.org/install/linux/`
+- Official Swiftly Linux bootstrap assets checked:
+  - `https://download.swift.org/swiftly/linux/swiftly-riscv64.tar.gz`: 404
+  - `https://download.swift.org/swiftly/linux/swiftly-x86_64.tar.gz`: 200
+  - `https://download.swift.org/swiftly/linux/swiftly-aarch64.tar.gz`: 200
+- Result: the current Swift.org Linux install flow uses the Swiftly
+  architecture-specific bootstrap asset, and no `riscv64` Linux Swiftly
+  bootstrap asset is published at the checked official URL.
 
 Keep this recipe unresolved until an official redistributable Linux riscv64
 toolchain source, or a reproducible build recipe with redistribution terms, can
