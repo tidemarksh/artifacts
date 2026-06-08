@@ -134,6 +134,12 @@
         "sha256": "TODO"
       },
       {
+        "id": "zig-riscv64-0.15.2",
+        "releaseTag": "zig-riscv64-0.15.2",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
         "id": "glibc-riscv64-debian-sid",
         "releaseTag": "glibc-riscv64-debian-sid",
         "asset": "payload.tar.zst",

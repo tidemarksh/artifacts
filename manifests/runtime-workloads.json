@@ -154,6 +154,13 @@
         "sourceManifestSha256": "9e22eba58bea6230ad565df1057bd404949d9bce559094a02b2f3dd9d039bf98"
       },
       {
+        "id": "zig-riscv64-0.15.2",
+        "releaseTag": "zig-riscv64-0.15.2",
+        "asset": "payload.tar.zst",
+        "sha256": "cdf6e8759ad9d2b0da79423669d0a632c71a9d8beccea90b31e9a5390f2a81d7",
+        "sourceManifestSha256": "70b9745e827532cb99d71075958f88b0c561a99ac368d9ef945ae78c49ec676b"
+      },
+      {
         "id": "glibc-riscv64-debian-sid",
         "releaseTag": "glibc-riscv64-debian-sid",
         "asset": "payload.tar.zst",
