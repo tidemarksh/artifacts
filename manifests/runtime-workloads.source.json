@@ -140,6 +140,12 @@
         "sha256": "TODO"
       },
       {
+        "id": "ocaml-riscv64-5.4.0-debian-sid",
+        "releaseTag": "ocaml-riscv64-5.4.0-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "TODO"
+      },
+      {
         "id": "glibc-riscv64-debian-sid",
         "releaseTag": "glibc-riscv64-debian-sid",
         "asset": "payload.tar.zst",

@@ -161,6 +161,13 @@
         "sourceManifestSha256": "70b9745e827532cb99d71075958f88b0c561a99ac368d9ef945ae78c49ec676b"
       },
       {
+        "id": "ocaml-riscv64-5.4.0-debian-sid",
+        "releaseTag": "ocaml-riscv64-5.4.0-debian-sid",
+        "asset": "payload.tar.zst",
+        "sha256": "fe7abfa54e5620e5adad0aae069ed9b09fbe6251880ec202c3d1348ec959feec",
+        "sourceManifestSha256": "d64a7ea1ee0e29a7216c661d12f819a593c95f77afb772469fe55d4970378596"
+      },
+      {
         "id": "glibc-riscv64-debian-sid",
         "releaseTag": "glibc-riscv64-debian-sid",
         "asset": "payload.tar.zst",
