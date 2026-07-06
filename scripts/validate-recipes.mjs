@@ -22,6 +22,23 @@ function assertPayloadRelativePath(value, label) {
   }
 }
 
+function validateDebianIndex(index, path) {
+  assertString(index?.mirror, `${path}: mirror`);
+  assertString(index?.suite, `${path}: suite`);
+  if (!Array.isArray(index.components) || index.components.length === 0) {
+    throw new Error(`${path}: components must be a non-empty array`);
+  }
+  for (const [indexNumber, component] of index.components.entries()) {
+    assertString(component, `${path}: components[${indexNumber}]`);
+  }
+  if (index.architecture !== undefined) {
+    assertString(index.architecture, `${path}: architecture`);
+  }
+  if (index.mirror.includes("/home/") || index.mirror.startsWith("file:")) {
+    throw new Error(`${path}: local Debian mirror references are not allowed`);
+  }
+}
+
 function validateRecipe(recipe, path) {
   assertString(recipe.artifactId, `${path}: artifactId`);
   assertString(recipe.type, `${path}: type`);
@@ -48,6 +65,14 @@ function validateRecipe(recipe, path) {
     }
     if (recipe.debian.mirror.includes("/home/") || recipe.debian.mirror.startsWith("file:")) {
       throw new Error(`${path}: local Debian mirror references are not allowed`);
+    }
+    if (recipe.debian.additionalPackageIndexes !== undefined) {
+      if (!Array.isArray(recipe.debian.additionalPackageIndexes)) {
+        throw new Error(`${path}: debian.additionalPackageIndexes must be an array`);
+      }
+      for (const [index, source] of recipe.debian.additionalPackageIndexes.entries()) {
+        validateDebianIndex(source, `${path}: debian.additionalPackageIndexes[${index}]`);
+      }
     }
     if (recipe.debian.stripDebug !== undefined) {
       if (!Array.isArray(recipe.debian.stripDebug)) {

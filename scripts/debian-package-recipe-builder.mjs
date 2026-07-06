@@ -255,19 +255,43 @@ function assertPinnedRootVersions(rootPackages, packageIndex) {
   }
 }
 
-async function readDebianPackageIndex({ mirror, suite, architecture, components }, workDir) {
+function debianIndexSources(debian) {
+  return [
+    {
+      mirror: debian.mirror,
+      suite: debian.suite,
+      architecture: debian.architecture,
+      components: debian.components,
+    },
+    ...(debian.additionalPackageIndexes ?? []).map((index) => ({
+      mirror: index.mirror,
+      suite: index.suite,
+      architecture: index.architecture ?? debian.architecture,
+      components: index.components,
+    })),
+  ];
+}
+
+async function readDebianPackageIndex(debian, workDir) {
   const merged = new Map();
   const indexes = [];
-  for (const component of components) {
-    const url = `${mirror}/dists/${suite}/${component}/binary-${architecture}/Packages.xz`;
-    const compressed = await fetchBytes(url);
-    const xzPath = resolve(workDir, `${component}-Packages.xz`);
-    writeFileSync(xzPath, compressed);
-    const text = run("xz", ["-dc", xzPath]).toString("utf8");
-    for (const [name, record] of parsePackagesFile(text)) {
-      merged.set(name, { ...record, Component: component });
+  for (const source of debianIndexSources(debian)) {
+    for (const component of source.components) {
+      const url = `${source.mirror}/dists/${source.suite}/${component}/binary-${source.architecture}/Packages.xz`;
+      const compressed = await fetchBytes(url);
+      const xzPath = resolve(workDir, `${source.suite}-${component}-Packages.xz`);
+      writeFileSync(xzPath, compressed);
+      const text = run("xz", ["-dc", xzPath]).toString("utf8");
+      for (const [name, record] of parsePackagesFile(text)) {
+        merged.set(name, {
+          ...record,
+          Component: component,
+          IndexMirror: source.mirror,
+          IndexSuite: source.suite,
+        });
+      }
+      indexes.push({ url, component, sha256: sha256Bytes(compressed), size: compressed.length });
     }
-    indexes.push({ url, component, sha256: sha256Bytes(compressed), size: compressed.length });
   }
   return { packageIndex: buildPackageIndex(merged), indexes };
 }
@@ -332,7 +356,7 @@ async function downloadDebs(records, mirror, sourceDir) {
   const downloads = [];
   mkdirSync(sourceDir, { recursive: true });
   for (const record of records) {
-    const url = `${mirror}/${record.Filename}`;
+    const url = `${record.IndexMirror ?? mirror}/${record.Filename}`;
     const fileName = basename(record.Filename);
     const path = resolve(sourceDir, fileName);
     const bytes = await fetchBytes(url);

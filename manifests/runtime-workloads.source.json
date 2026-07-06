@@ -47,8 +47,8 @@
         "sha256": "TODO"
       },
       {
-        "id": "elixir-erlang-riscv64-1.18.3-27.3",
-        "releaseTag": "elixir-erlang-riscv64-1.18.3-27.3",
+        "id": "elixir-erlang-riscv64-1.18.3-28.3.1",
+        "releaseTag": "elixir-erlang-riscv64-1.18.3-28.3.1",
         "asset": "payload.tar.zst",
         "sha256": "TODO"
       },

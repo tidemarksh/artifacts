@@ -1,0 +1,53 @@
+{
+  "artifactId": "elixir-erlang-riscv64-1.18.3-28.3.1",
+  "type": "debian-package-set",
+  "version": "sid-experimental-riscv64-20260115T202701Z",
+  "summary": "Debian snapshot riscv64 Elixir 1.18.3 and Erlang/OTP 28 runtime package set.",
+  "debian": {
+    "mirror": "https://snapshot.debian.org/archive/debian/20260115T202701Z",
+    "suite": "sid",
+    "architecture": "riscv64",
+    "components": [
+      "main"
+    ],
+    "additionalPackageIndexes": [
+      {
+        "mirror": "https://snapshot.debian.org/archive/debian/20260115T202701Z",
+        "suite": "experimental",
+        "components": [
+          "main"
+        ]
+      }
+    ],
+    "rootPackages": [
+      {
+        "name": "elixir",
+        "version": "1.18.3.dfsg-1"
+      },
+      {
+        "name": "erlang-base",
+        "version": "1:28.3.1+dfsg-1"
+      },
+      {
+        "name": "erlang-crypto",
+        "version": "1:28.3.1+dfsg-1"
+      },
+      {
+        "name": "erlang-inets",
+        "version": "1:28.3.1+dfsg-1"
+      },
+      {
+        "name": "erlang-parsetools",
+        "version": "1:28.3.1+dfsg-1"
+      },
+      {
+        "name": "erlang-public-key",
+        "version": "1:28.3.1+dfsg-1"
+      },
+      {
+        "name": "erlang-tools",
+        "version": "1:28.3.1+dfsg-1"
+      }
+    ]
+  }
+}
