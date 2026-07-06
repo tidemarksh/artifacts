@@ -54,11 +54,11 @@
         "sourceManifestSha256": "111ecf2808e2a7f124a6638b89dce23a77f60eee6dc9de6528452e457c1f6f65"
       },
       {
-        "id": "elixir-erlang-riscv64-1.18.3-27.3",
-        "releaseTag": "elixir-erlang-riscv64-1.18.3-27.3",
+        "id": "elixir-erlang-riscv64-1.18.3-28.3.1",
+        "releaseTag": "elixir-erlang-riscv64-1.18.3-28.3.1",
         "asset": "payload.tar.zst",
-        "sha256": "e47b26e114320d21c96670f25d387e53694fd1470ed43ab040e2abdaccb207d8",
-        "sourceManifestSha256": "5253cd5d79e72d416410122b8aec479dc52b60071fe365e37c9aeaeb4b35a09e"
+        "sha256": "d33dcd137fd6f0194526ae8ae16d0e6f1d6f7996c6a6ee7a94bba65d53f464cd",
+        "sourceManifestSha256": "25a4151b4eea6143868214781b35c13c9d25d7d7b40570a73895dcafe9abb8ac"
       },
       {
         "id": "php-riscv64-8.4.21-debian-sid",
