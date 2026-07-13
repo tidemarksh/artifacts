@@ -13,35 +13,35 @@
     "rootPackages": [
       {
         "name": "gcc-16",
-        "version": "16.1.0-1"
+        "version": "16.1.0-2"
       },
       {
         "name": "cpp-16",
-        "version": "16.1.0-1"
+        "version": "16.1.0-2"
       },
       {
         "name": "gcc-16-riscv64-linux-gnu",
-        "version": "16.1.0-1"
+        "version": "16.1.0-2"
       },
       {
         "name": "cpp-16-riscv64-linux-gnu",
-        "version": "16.1.0-1"
+        "version": "16.1.0-2"
       },
       {
         "name": "libgcc-16-dev",
-        "version": "16.1.0-1"
+        "version": "16.1.0-2"
       },
       {
         "name": "libc6-dev",
-        "version": "2.42-16"
+        "version": "2.42-17"
       },
       {
         "name": "binutils",
-        "version": "2.46-3"
+        "version": "2.46.50.20260617-1"
       },
       {
         "name": "binutils-riscv64-linux-gnu",
-        "version": "2.46-3"
+        "version": "2.46.50.20260617-1"
       }
     ],
     "stripDebug": [
