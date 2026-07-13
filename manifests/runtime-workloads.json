@@ -136,8 +136,8 @@
         "id": "c-toolchain-riscv64-gcc16",
         "releaseTag": "c-toolchain-riscv64-gcc16",
         "asset": "payload.tar.zst",
-        "sha256": "9287bead1f9035bed9ff18538b5420f50db439945dc550e4dcbc4246b680321b",
-        "sourceManifestSha256": "96eac6f1a89582b38ad57c09cfb6a07b861d6b6ad358167dd9570f50a82715ba"
+        "sha256": "b7d72eea6f141cec97cefc86365864da3c22e0b1cf9a2db20d5ae404f104b116",
+        "sourceManifestSha256": "b757697c29c2a509963dc2f154a924d2751027571c8c4bc3d36dfc761f935a9b"
       },
       {
         "id": "cpp-toolchain-riscv64-gcc16",
