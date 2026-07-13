@@ -180,8 +180,8 @@
         "id": "libuv-suite-1.51.0",
         "releaseTag": "libuv-suite-1.51.0",
         "asset": "payload.tar.zst",
-        "sha256": "ee142cffd3f25ad7f1998e0c2c5380ea5d29b9c1c88ced3dad80b84198ede88d",
-        "sourceManifestSha256": "bcf0908bf94bfe4d6d1d292d653ead92632770d1088a282c4fe4ec835b7fe03b"
+        "sha256": "98a9b3a97a6f0139e3cb3c553568519fce1d78411354bd416e5be2c97f830062",
+        "sourceManifestSha256": "cf821e8a03cb3ab73abfcced178ecc04c958143cf58f1bc45313e338e8041855"
       },
       {
         "id": "rust-upstream-suite-1.94.1",
