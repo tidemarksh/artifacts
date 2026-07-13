@@ -89,7 +89,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${{ inputs.release_tag }}" \
-            dist/${{ inputs.artifact_id }}/* \
-            --title "${{ inputs.release_tag }}" \
-            --generate-notes
+          if gh release view "${{ inputs.release_tag }}" >/dev/null 2>&1; then
+            gh release upload "${{ inputs.release_tag }}" \
+              dist/${{ inputs.artifact_id }}/* \
+              --clobber
+          else
+            gh release create "${{ inputs.release_tag }}" \
+              dist/${{ inputs.artifact_id }}/* \
+              --title "${{ inputs.release_tag }}" \
+              --generate-notes
+          fi
